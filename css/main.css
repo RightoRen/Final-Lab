@@ -87,6 +87,9 @@ header, #banner {
 
 h5 {text-align: center; margin-top: 10px;}
 
+h5::before {content: "🍀";}
+h5::after {content: "🍀";}
+
 .characters li a { text-decoration: none; }
 
 .orange_bumper {
