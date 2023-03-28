@@ -13,35 +13,67 @@ html, body { height: 100% }
 
 body { 
 font-family: sans-serif;
-background-color: black;
-color: white;
-
-background-image: url("../images/background.jpg");
-background-repeat: no-repeat;
-background-size: contain;
+background: #dcefd8 url(https://static.wikia.nocookie.net/hmwikia/images/0/02/Pioneers_of_Olive_Town_Tree_Background.png/revision/latest);
+color: rgb(39, 7, 7);
 }
 
 /* main header rules */
 header {
   position: sticky;
   top: 0;
+  
   display: flex;
-  justify-content: end;
+  justify-content: center;
+  background-color: rgb(209, 255, 209);
+  border-bottom: 5px #62864f;
+  border-style: ridge;
+  border-top: 0;
+  border-left: 0;
+  border-right: 0;
 }
 
-#main-logo { width: 220px; padding: 10px 20px; margin-left: auto; }
+#main-logo { width: 220px; padding: 10px 20px; }
+
+header, #banner {
+  background-image: url(../images/SOS_banner.png);
+
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+ }
+
+.container {
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(12/ 60px);
+  grid-row-gap: 10px;
+  background-color: rgb(252, 255, 217);
+  width: 1180px;
+  padding-top: 40px;
+  padding-bottom: 20px;
+  padding-left: 10px;
+  padding-right: 10px;
+
+  grid-column-gap: 20px;
+  grid-row-gap: 30px; 
+}
 
 /* main rules here */
-#character-nav { margin-left: 30%; max-width: 60%; }
+#character-nav { margin-left: 7%; max-width: 60%;}
 
-.characters { list-style-type: none; }
+.characters { 
+  list-style-type: none;
+  display: inline-flex; 
+  position: relative;
+}
 
 .characters li { 
   display: inline-block;
-  height: 220px;
+  height: 200px;
   margin: 10px 8px;
+  margin-bottom: 100px;
 
-  background-color: black;
+  background-color: rgb(187, 218, 139);
 
   text-align: left;
 
@@ -49,26 +81,31 @@ header {
 }
 
 .characters li h5 {
-  color: white;
-  padding: 12px 8px;
+  color: rgb(49, 12, 12);
+  position: relative;
 }
+
+h5 {text-align: center; margin-top: 10px;}
 
 .characters li a { text-decoration: none; }
 
-.red_bumper {
+.orange_bumper {
   width: 100%;
   height: 6px;
-  background-color: red;
+  background-color: rgb(20, 61, 16);
 }
+.characters li:hover .orange_bumper {height: 16px;}
 
 article { 
   padding: 20px;
-  margin-left: 30%;
+  margin-left: 20%;
 }
 
 /* select the h3 tag inside the article tag on the page */
 /* a selector followed by a space and then ANOTHER selector gets a reference to the parent element and then the child element or elements inside of it */
 article h3  {
+  text-align: center;
+  margin-right: 310px;
   font-size: 2.5em;
   margin-bottom: 14px;
 }
@@ -82,15 +119,17 @@ article p {
 .sprite {
   width: 150px;
   height: 150px;
+  border: 3px ridge rgb(15, 70, 33);
+  border-bottom: none;
   
-  background-image: url('../images/marvelSprites.jpg');
+  background-image: url('../images/SOS_Sprites.jpg');
 }
 
-#carol { background-position: -150px 0; }
-#clint { background-position: -300px 0; }
-#hulk { background-position: -450px 0; }
-#thor { background-position: -600px 0; }
-#widow { background-position: -750px 0; }
+#popuri { background-position: -150px 0; }
+#cliff { background-position: -300px 0; }
+#marie { background-position: -450px 0; }
+#kai { background-position: -600px 0; }
+#ran { background-position: -750px 0; }
 
 .sprite:hover { background-position-y: -150px !important; }
 
@@ -104,35 +143,47 @@ footer {
 .sticky_footer {
   position: sticky;
   top: 100%;
-  height: 80px;
+  height: 65px;
 
   background-color: rgba(0, 0, 0, 0.8);
 }
 
 /* lightbox rules here */
 
-.lightbox { 
-  width: 100vw; /* vw = viewport width => screen width */
-  height: 100vh; /* vh = viewport height => screen height */
 
+
+
+.lightbox { 
+  width: 100vw;
+  height: 120vh;
+  
   position: absolute;
   top: 0;
   left: 0;
 
-  background-color: rgba(0, 0, 0, 0.85);
-  background-image: url('../images/Cap_LB_Bg.png');
+  background-color: rgba(180, 180, 180, 0.966);
+  background-image: url('../images/SMTGray.webp');
   background-repeat: no-repeat;
+  z-index: 1000px;
 
-  background-size: 55vh; /* 55% of the viewport height */
+  background-size: 28vh; /* 55% of the viewport height */
   background-position: 40px bottom;
 
   display: none;
 }
 
-#lightbox2 { background-image: url('../images/Thor_LB_Bg.png'); }
+#lightbox2 {background-image: url('../images/SMTPopuri.webp'); background-size: 40vh;}
+
+#lightbox3 { background-image: url('../images/SMTGrif.webp'); background-size: 30vh; }
+
+#lightbox4 { background-image: url('../images/SMTMary.webp'); background-size: 30vh; }
+
+#lightbox5 { background-image: url('../images/SMTKai.webp'); background-size: 25vh; }
+
+#lightbox6 { background-image: url('../images/SMTAnn.webp'); background-size: 35vh; }
 
 .lightbox_close {
-  position: relative;
+  position: absolute;
   top: 20px;
   left: 95%;
 
